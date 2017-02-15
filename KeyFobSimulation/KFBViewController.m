@@ -1026,7 +1026,7 @@
     BOOL alreadySubscribed = NO;
     for ( CBCentral *centralSubscriber in subscriberList)
     {
-        if (central.UUID  &&  CFEqual(central.UUID,centralSubscriber.UUID ))
+        if (central.identifier && central.identifier == centralSubscriber.identifier)
         {
             alreadySubscribed = YES;
             break;
@@ -1054,7 +1054,7 @@
    
     for ( KFBCentralAlertRecord *centralRecord in self.centralsConfiguringAlerts)
     {
-        if (central.UUID  &&  CFEqual(central.UUID,centralRecord.central.UUID ))
+        if (central.identifier && central.identifier == centralRecord.central.identifier)
         {
             record = centralRecord;
             break;
@@ -1105,7 +1105,7 @@
     NSUInteger index=0;
     for ( CBCentral *centralSubscriber in subscriberList)
     {
-        if (central.UUID  &&  CFEqual(central.UUID,centralSubscriber.UUID ))
+        if (central.identifier && central.identifier == centralSubscriber.identifier)
         {
             matchFound = YES;
             break;
